@@ -22,10 +22,10 @@
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<!--
 		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://localhost:5432/spring-data-teste-aula" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/db_spring_data?autoReconnect=true" />
 		
 		<property name="username" value="postgres" />
-		<property name="password" value="admin" />
+		<property name="password" value="root1234*" />
 		-->
 		
 		<!--
@@ -38,6 +38,7 @@
 		
 		<property name="username" value="thiersfb" />
 		<property name="password" value="Thiers07*" />
+		
 	</bean>
 
 
@@ -47,11 +48,12 @@
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<!--<property name="database" value="POSTGRESQL" />-->
-				<property name="database" value="SQL_SERVER" />
 				<property name="generateDdl" value="true" /> <!-- Gerar as tabelas no banco -->
-				
+				<property name="database" value="SQL_SERVER" />
+				<!--
 	            <property name="showSql" value="true" />
 	            <property name="databasePlatform" value="org.hibernate.dialect.SQLServerDialect" />
+	            -->
         
 			</bean>
 		</property>
