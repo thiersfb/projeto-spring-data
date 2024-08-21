@@ -64,4 +64,18 @@ public class AppSpringDataTest {
 		
 	}
 	
+
+	@Test
+	public void testeUpdate() {
+		
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(1L);
+		
+		UsuarioSpringData usuario = usuarioSpringData.get();
+		
+		usuario.setEmail("thiers.fb@gmail.com");
+
+		interfaceSpringDataUser.save(usuario);
+		
+	}
+	
 }
