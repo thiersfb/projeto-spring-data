@@ -44,7 +44,6 @@ public class AppSpringDataTest {
 		System.out.println("Login  :   "+ usuarioSpringData.get().getLogin());
 		System.out.println("Senha  :   "+ usuarioSpringData.get().getSenha());
 		
-		
 	}
 
 	@Test
@@ -75,6 +74,15 @@ public class AppSpringDataTest {
 		usuario.setEmail("thiers.fb@gmail.com");
 
 		interfaceSpringDataUser.save(usuario);
+		
+	}
+
+	@Test
+	public void testeDelete() {
+		
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(4L);
+		
+		interfaceSpringDataUser.delete(usuarioSpringData.get());
 		
 	}
 	
