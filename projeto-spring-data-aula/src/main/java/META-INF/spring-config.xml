@@ -50,9 +50,10 @@
 				<!--<property name="database" value="POSTGRESQL" />-->
 				<property name="database" value="SQL_SERVER" />
 				<property name="generateDdl" value="true" /> <!-- Gerar as tabelas no banco -->
-				
+				<!--
 	            <property name="showSql" value="true" />
 	            <property name="databasePlatform" value="org.hibernate.dialect.SQLServerDialect" />
+	            -->
 	            
         
 			</bean>

@@ -1,5 +1,7 @@
 package projeto.spring.data.aula;
 
+import java.util.Optional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +35,16 @@ public class AppSpringDataTest {
 	
 	@Test
 	public void testeConsulta() {
-		System.out.println("Iniciou spring com sucesso");
+		
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(2L);
+
+		System.out.println("Id     :   "+ usuarioSpringData.get().getId());
+		System.out.println("Nome   :   "+ usuarioSpringData.get().getNome());
+		System.out.println("Idade  :   "+ usuarioSpringData.get().getIdade());
+		System.out.println("Login  :   "+ usuarioSpringData.get().getLogin());
+		System.out.println("Senha  :   "+ usuarioSpringData.get().getSenha());
+		
+		
 	}
 	
 }
