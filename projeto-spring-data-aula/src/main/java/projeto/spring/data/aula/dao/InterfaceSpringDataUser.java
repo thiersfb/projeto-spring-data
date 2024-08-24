@@ -15,9 +15,11 @@ import projeto.spring.data.aula.model.UsuarioSpringData;
 public interface InterfaceSpringDataUser extends CrudRepository<UsuarioSpringData, Long> {
 	
 	/* "UsuarioSpringData" -> é o nome da Classe; não é o nome da tabela no banco */
+	@Transactional(readOnly = true)
 	@Query(value = "select p from UsuarioSpringData p where p.nome like %?1%")
 	public List<UsuarioSpringData> buscaPorNome(String nome);
 	
+	@Transactional(readOnly = true)
 	@Query(value = "select p from UsuarioSpringData p where p.nome = :paramnome")
 	public UsuarioSpringData buscaPorNomeParam(@Param("paramnome") String paramnome);
 	
