@@ -22,11 +22,11 @@ public class AppSpringDataTest {
 	@Test
 	public void testeInsert() {
 		UsuarioSpringData usuarioSpringData = new UsuarioSpringData();
-		usuarioSpringData.setEmail("thiers.fb@gmail.com");
+		usuarioSpringData.setEmail("teste@gmail.com");
 		usuarioSpringData.setIdade(36);
-		usuarioSpringData.setLogin("thiersfb");
-		usuarioSpringData.setSenha("thiers07");
-		usuarioSpringData.setNome("Thiers Barizon");
+		usuarioSpringData.setLogin("teste");
+		usuarioSpringData.setSenha("teste");
+		usuarioSpringData.setNome("Teste");
 		
 		interfaceSpringDataUser.save(usuarioSpringData);
 		
@@ -81,7 +81,7 @@ public class AppSpringDataTest {
 	@Test
 	public void testeDelete() {
 		
-		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(4L);
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(3L);
 		
 		interfaceSpringDataUser.delete(usuarioSpringData.get());
 		
@@ -116,6 +116,11 @@ public class AppSpringDataTest {
 			System.out.println("Senha  :   "+ usuarioSpringData.getSenha());
 			System.out.println("----------------------------");
 		
+	}
+	
+	@Test
+	public void testeDeletePorNome() {
+		interfaceSpringDataUser.deletePorNome("Teste2");
 	}
 	
 }
