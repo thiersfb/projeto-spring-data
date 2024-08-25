@@ -1,9 +1,14 @@
 package projeto.spring.data.aula.model;
 
 import jakarta.persistence.GeneratedValue;
+
+import java.util.List;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /*
@@ -26,6 +31,10 @@ public class UsuarioSpringData {
 	private String nome;
 	private String email;
 	private int idade;
+	
+	@OneToMany(mappedBy = "usuario", orphanRemoval = true, fetch = FetchType.EAGER)
+	private List<Telefone> telefones;
+	
 	public Long getId() {
 		return id;
 	}
@@ -62,6 +71,12 @@ public class UsuarioSpringData {
 	}
 	public void setIdade(int idade) {
 		this.idade = idade;
+	}
+	public List<Telefone> getTelefones() {
+		return telefones;
+	}
+	public void setTelefones(List<Telefone> telefones) {
+		this.telefones = telefones;
 	}
 	
 	
